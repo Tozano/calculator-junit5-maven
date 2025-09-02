@@ -26,9 +26,10 @@ pipeline {
           // Utilise Maven installé dans Jenkins
             dir('/workspace/calculator') {
               // Fournit le settings.xml configuré dans Jenkins (Config File Provider)
-              configFileProvider([configFile(fileId: 'maven-settings-nexus', variable: 'MAVEN_SETTINGS')]) {
+              configFileProvider([configFile(fileId: 'maven-settings-nexus', variable: '8ec06d05-3ad2-4bcf-884d-b0601a08deab
+')]) {
                 // Fournit les credentials Nexus
-                withCredentials([usernamePassword(credentialsId: 'nexus-cred', usernameVariable: 'NEXUS_USER', passwordVariable: 'NEXUS_PWD')]) {
+                withCredentials([usernamePassword(credentialsId: 'nexus-cred', usernameVariable: 'jenkins', passwordVariable: 'GGSKILL59!')]) {
                   // Déploiement
                   sh 'mvn -B -s "$MAVEN_SETTINGS" -DskipTests deploy'
                 }
