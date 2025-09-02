@@ -24,7 +24,6 @@ pipeline {
       steps {
         script {
           // Utilise Maven installé dans Jenkins
-          withMaven(maven: 'Maven 3.9') { // Remplace par le nom exact de ton outil Maven
             dir('/workspace/calculator') {
               // Fournit le settings.xml configuré dans Jenkins (Config File Provider)
               configFileProvider([configFile(fileId: 'maven-settings-nexus', variable: 'MAVEN_SETTINGS')]) {
@@ -34,7 +33,6 @@ pipeline {
                   sh 'mvn -B -s "$MAVEN_SETTINGS" -DskipTests deploy'
                 }
               }
-            }
           }
         }
       }
