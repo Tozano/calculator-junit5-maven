@@ -28,7 +28,7 @@ pipeline {
               // Fournit le settings.xml configuré dans Jenkins (Config File Provider)
               configFileProvider([configFile(fileId: '8ec06d05-3ad2-4bcf-884d-b0601a08deab', variable: 'MAVEN_SETTINGS')]) {
                 // Fournit les credentials Nexus
-                withCredentials([usernamePassword(credentialsId: 'nexus-cred', usernameVariable: 'jenkins', passwordVariable: 'GGSKILL59!')]) {
+                withCredentials([usernamePassword(credentialsId: 'nexus-cred', usernameVariable: 'jenkins', passwordVariable: 'trucmuche')]) {
                   // Déploiement
                   sh 'mvn -B -s "$MAVEN_SETTINGS" -DskipTests deploy'
                 }
