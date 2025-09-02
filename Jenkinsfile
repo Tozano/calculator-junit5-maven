@@ -24,7 +24,7 @@ pipeline {
       steps {
         script {
           // Utilise Maven installé dans Jenkins
-            dir('/workspace/calculator') {
+            dir('.') {
               // Fournit le settings.xml configuré dans Jenkins (Config File Provider)
               configFileProvider([configFile(fileId: '8ec06d05-3ad2-4bcf-884d-b0601a08deab', variable: 'MAVEN_SETTINGS')]) {
                 // Fournit les credentials Nexus
